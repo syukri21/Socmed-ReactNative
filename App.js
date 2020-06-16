@@ -11,6 +11,7 @@ import {
 } from 'native-base';
 import { StyleSheet } from 'react-native';
 import Home from './src/pages/home/index';
+import Events from './src/pages/events/events';
 
 const styles = StyleSheet.create({
   navText: {
@@ -23,7 +24,7 @@ const App = () => {
   return (
     <Container>
       <Content>
-        <Home></Home>
+        <Events></Events>
       </Content>
       <Footer>
         <FooterTab>
