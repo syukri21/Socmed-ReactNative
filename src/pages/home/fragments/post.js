@@ -27,7 +27,13 @@ const styles = StyleSheet.create({
 
 const Post = () => {
   return (
-    <Card style={{ borderRadius: 10, paddingVertical: 5 }}>
+    <Card
+      style={{
+        borderRadius: 10,
+        paddingVertical: 5,
+        elevation: 1,
+        shadowRadius: 0.1,
+      }}>
       <CardItem>
         <TextAvatar
           backgroundColor={'#253A8D'}

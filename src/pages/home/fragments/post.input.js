@@ -15,7 +15,13 @@ import TextAvatar from 'react-native-text-avatar';
 
 const PostInput = () => {
   return (
-    <Card style={{ paddingVertical: 10, borderRadius: 10 }}>
+    <Card
+      style={{
+        paddingVertical: 5,
+        borderRadius: 10,
+        elevation: 1,
+        shadowRadius: 0.1,
+      }}>
       <CardItem>
         <Body>
           <Grid>
