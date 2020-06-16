@@ -10,7 +10,15 @@ import {
   Icon,
 } from 'native-base';
 import TextAvatar from 'react-native-text-avatar';
-import { TouchableHighlight } from 'react-native';
+import { TouchableHighlight, StyleSheet } from 'react-native';
+import material from '../../../../native-base-theme/variables/material';
+
+const styles = StyleSheet.create({
+  name: {
+    marginLeft: 1.5 * material.cardItemPadding,
+    fontSize: 12,
+  },
+});
 
 const Post = () => {
   return (
@@ -24,9 +32,7 @@ const Post = () => {
         >
           ALI MASNGUT
         </TextAvatar>
-        <Text style={{ marginLeft: 10, fontSize: 12 }}>
-          Drs. ALI MASNGUT, SH, M.Ag
-        </Text>
+        <Text style={styles.name}>Drs. ALI MASNGUT, SH, M.Ag</Text>
       </CardItem>
       <CardItem style={{ flexDirection: 'column', alignItems: 'flex-start' }}>
         <Body>

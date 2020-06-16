@@ -18,6 +18,7 @@ import Home from './src/pages/home/index';
 import Events from './src/pages/events/index';
 import Menus from './src/pages/menus/index';
 import Menu from './src/pages/menus/index';
+import Profile from './src/pages/profile/index';
 
 const styles = StyleSheet.create({
   navText: {
@@ -31,7 +32,7 @@ const App = () => {
     <StyleProvider style={getTheme(material)}>
       <Container>
         <Content>
-          <Home></Home>
+          <Profile></Profile>
         </Content>
         <Footer>
           <FooterTab>
