@@ -54,7 +54,7 @@ const Post = () => {
               flexDirection: 'row',
               alignItems: 'center',
             }}>
-            <TouchableHighlight style={{ marginRight: 10 }}>
+            <TouchableHighlight activeOpacity style={{ marginRight: 10 }}>
               <Icon
                 type="Entypo"
                 style={{ fontSize: 20, color: '#2978C9' }}
