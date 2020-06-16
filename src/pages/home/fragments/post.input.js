@@ -5,7 +5,6 @@ import {
   CardItem,
   Card,
   Body,
-  Content,
   Button,
   Input,
   Item,
@@ -22,12 +21,12 @@ const PostInput = () => {
           <Grid>
             <Col
               style={{
-                width: 80,
+                width: 55,
               }}>
               <TextAvatar
                 backgroundColor={'#253A8D'}
                 textColor={'#fff'}
-                size={60}
+                size={40}
                 type={'circle'} // optional
               >
                 John Doe
