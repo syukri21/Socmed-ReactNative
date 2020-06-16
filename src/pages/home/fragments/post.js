@@ -18,6 +18,11 @@ const styles = StyleSheet.create({
     marginLeft: 1.5 * material.cardItemPadding,
     fontSize: 12,
   },
+  iconButton: {
+    color: material.brandPrimary,
+    marginLeft: 10,
+    fontSize: 20,
+  },
 });
 
 const Post = () => {
@@ -60,16 +65,16 @@ const Post = () => {
               flexDirection: 'row',
               alignItems: 'center',
             }}>
-            <TouchableHighlight activeOpacity style={{ marginRight: 10 }}>
+            <TouchableHighlight activeOpacity>
               <Icon
                 type="Entypo"
-                style={{ fontSize: 20, color: '#2978C9' }}
+                style={styles.iconButton}
                 name="heart-outlined"></Icon>
             </TouchableHighlight>
             <TouchableHighlight>
               <Icon
                 type="Entypo"
-                style={{ fontSize: 20, color: '#2978C9' }}
+                style={styles.iconButton}
                 name="message"></Icon>
             </TouchableHighlight>
           </View>
