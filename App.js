@@ -31,7 +31,7 @@ const App = () => {
     <StyleProvider style={getTheme(material)}>
       <Container>
         <Content>
-          <Menus></Menus>
+          <Home></Home>
         </Content>
         <Footer>
           <FooterTab>
