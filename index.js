@@ -2,12 +2,30 @@
  * @format
  */
 
-import { AppRegistry, YellowBox } from 'react-native';
+// import { YellowBox } from 'react-native';
 import App from './App';
-import { name as appName } from './app.json';
+import { Navigation } from 'react-native-navigation';
+// import { name as appName } from './app.json';
 
-YellowBox.ignoreWarnings([
-  'VirtualizedLists should never be nested', // TODO: Remove when fixed
-]);
+// YellowBox.ignoreWarnings([
+//   'VirtualizedLists should never be nested', // TODO: Remove when fixed
+// ]);
 
-AppRegistry.registerComponent(appName, () => App);
+Navigation.registerComponent('com.myApp.WelcomeScreen', () => App);
+Navigation.events().registerAppLaunchedListener(() => {
+  Navigation.setRoot({
+    root: {
+      stack: {
+        children: [
+          {
+            component: {
+              name: 'com.myApp.WelcomeScreen',
+            },
+          },
+        ],
+      },
+    },
+  });
+});
+
+// AppRegistry.registerComponent(appName, () => App);

@@ -10,6 +10,10 @@ import {
   StyleProvider,
   Text,
   Icon,
+  Title,
+  Left,
+  Body,
+  Right,
 } from 'native-base';
 import { StyleSheet } from 'react-native';
 import material from './native-base-theme/variables/material';
@@ -31,6 +35,17 @@ const App = () => {
   return (
     <StyleProvider style={getTheme(material)}>
       <Container>
+        <Header>
+          <Left>
+            <Button transparent>
+              <Icon name="menu" />
+            </Button>
+          </Left>
+          <Body>
+            <Title>Header</Title>
+          </Body>
+          <Right />
+        </Header>
         <Content>
           <Profile></Profile>
         </Content>
