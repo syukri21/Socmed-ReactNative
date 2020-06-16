@@ -17,6 +17,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 20,
+    color: '#2B79C9',
   },
 });
 
@@ -42,12 +43,28 @@ const Events = () => {
       </View>
       <View style={styles.container}>
         <Text style={styles.title}>Juli 2020</Text>
-
         <Timeline
           style={styles.list}
           data={mockData.events1}
           circleColor="rgb(45,156,219)"
           lineColor="rgb(45,156,219)"
+          showTime={false}
+          renderDetail={(rowData, sectionID, rowID) => (
+            <TimeLineItem
+              rowData={rowData}
+              sectionID={sectionID}
+              key={rowID}></TimeLineItem>
+          )}
+        />
+      </View>
+      <View style={styles.container}>
+        <Text style={styles.title}>Agustus 2020</Text>
+        <Timeline
+          style={styles.list}
+          data={mockData.events2}
+          circleColor="rgb(45,156,219)"
+          lineColor="rgb(45,156,219)"
+          timeContainerStyle={{ minWidth: 52, marginTop: -5 }}
           showTime={false}
           renderDetail={(rowData, sectionID, rowID) => (
             <TimeLineItem

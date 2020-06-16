@@ -3,6 +3,9 @@ import { View, Text } from 'native-base';
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
+  container: {
+    transform: [{ translateY: -10 }],
+  },
   time: {
     color: '#8A8A8A',
     fontSize: 12,
@@ -29,7 +32,7 @@ const styles = StyleSheet.create({
 const TimeLineItem = (props) => {
   const { rowData, rowId, sectionId } = props;
   return (
-    <View>
+    <View style={styles.container}>
       <Text style={styles.time}>{rowData.time}</Text>
       <Text style={styles.title}>{rowData.title}</Text>
       <Text style={styles.description}>{rowData.description}</Text>
