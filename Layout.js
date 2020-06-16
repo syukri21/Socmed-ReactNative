@@ -18,37 +18,11 @@ import {
 import { StyleSheet } from 'react-native';
 import material from './native-base-theme/variables/material';
 
-import Home from './src/pages/home/index';
-import Events from './src/pages/events/index';
-import Menus from './src/pages/menus/index';
-import Menu from './src/pages/menus/index';
-import Profile from './src/pages/profile/index';
-
-const styles = StyleSheet.create({
-  navText: {
-    fontSize: 9,
-    textAlign: 'center',
-  },
-});
-
-const App = () => {
+const App = (props) => {
   return (
     <StyleProvider style={getTheme(material)}>
       <Container>
-        <Header>
-          <Left>
-            <Button transparent>
-              <Icon name="menu" />
-            </Button>
-          </Left>
-          <Body>
-            <Title>Header</Title>
-          </Body>
-          <Right />
-        </Header>
-        <Content>
-          <Profile></Profile>
-        </Content>
+        <Content>{props.children}</Content>
         <Footer>
           <FooterTab>
             <Button>

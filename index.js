@@ -2,16 +2,22 @@
  * @format
  */
 
-// import { YellowBox } from 'react-native';
-import App from './App';
+import { YellowBox } from 'react-native';
 import { Navigation } from 'react-native-navigation';
-// import { name as appName } from './app.json';
+import HomeScreen from './src/pages/home/index';
+import MenuScreen from './src/pages/menus/index';
+import ProfileScreen from './src/pages/profile/index';
+import EventScreen from './src/pages/events/index';
 
-// YellowBox.ignoreWarnings([
-//   'VirtualizedLists should never be nested', // TODO: Remove when fixed
-// ]);
+YellowBox.ignoreWarnings([
+  'VirtualizedLists should never be nested', // TODO: Remove when fixed
+]);
 
-Navigation.registerComponent('com.myApp.WelcomeScreen', () => App);
+Navigation.registerComponent('HomeScreen', () => HomeScreen);
+Navigation.registerComponent('MenuScreen', () => MenuScreen);
+Navigation.registerComponent('ProfileScreen', () => ProfileScreen);
+Navigation.registerComponent('EventScreen', () => EventScreen);
+
 Navigation.events().registerAppLaunchedListener(() => {
   Navigation.setRoot({
     root: {
@@ -19,7 +25,22 @@ Navigation.events().registerAppLaunchedListener(() => {
         children: [
           {
             component: {
-              name: 'com.myApp.WelcomeScreen',
+              name: 'HomeScreen',
+            },
+          },
+          {
+            component: {
+              name: 'MenuScreen',
+            },
+          },
+          {
+            component: {
+              name: 'ProfileScreen',
+            },
+          },
+          {
+            component: {
+              name: 'EventScreen',
             },
           },
         ],
