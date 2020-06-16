@@ -17,31 +17,29 @@ import {
 } from 'native-base';
 import { StyleSheet } from 'react-native';
 import material from './native-base-theme/variables/material';
+import { Navigation } from 'react-native-navigation';
 
 const App = (props) => {
+  const handleNavigation = (to) => () => {
+    Navigation.push(props.componentId, {
+      component: {
+        name: to, // Push the screen registered with the 'Settings' key
+        // options: {
+        //   // Optional options object to configure the screen
+        //   topBar: {
+        //     title: {
+        //       text: 'Settings', // Set the TopBar title of the new Screen
+        //     },
+        //   },
+        // },
+      },
+    });
+  };
+
   return (
     <StyleProvider style={getTheme(material)}>
       <Container>
         <Content>{props.children}</Content>
-        <Footer>
-          <FooterTab>
-            <Button>
-              <Icon name="home" type="AntDesign"></Icon>
-            </Button>
-            <Button>
-              <Icon name="calendar" type="AntDesign"></Icon>
-            </Button>
-            <Button active>
-              <Icon name="message1" type="AntDesign"></Icon>
-            </Button>
-            <Button>
-              <Icon name="th" type="FontAwesome5"></Icon>
-            </Button>
-            <Button>
-              <Icon name="user" type="AntDesign"></Icon>
-            </Button>
-          </FooterTab>
-        </Footer>
       </Container>
     </StyleProvider>
   );

@@ -3,10 +3,10 @@ import Layout from '../../../Layout';
 import Menu from './menus';
 import material from '../../../native-base-theme/variables/material';
 
-const MenusScreen = () => {
+const MenusScreen = (props) => {
   return (
-    <Layout>
-      <Menu></Menu>
+    <Layout {...props}>
+      <Menu {...props}></Menu>
     </Layout>
   );
 };

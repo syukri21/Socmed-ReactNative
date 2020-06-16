@@ -3,10 +3,10 @@ import Home from './home';
 import Layout from '../../../Layout';
 import material from '../../../native-base-theme/variables/material';
 
-const HomeScreen = () => {
+const HomeScreen = (props) => {
   return (
-    <Layout>
-      <Home></Home>
+    <Layout {...props}>
+      <Home {...props}></Home>
     </Layout>
   );
 };

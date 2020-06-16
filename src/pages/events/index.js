@@ -3,10 +3,10 @@ import Layout from '../../../Layout';
 import Events from './events';
 import material from '../../../native-base-theme/variables/material';
 
-const EventsScreen = () => {
+const EventsScreen = (props) => {
   return (
-    <Layout>
-      <Events></Events>
+    <Layout {...props}>
+      <Events {...props}></Events>
     </Layout>
   );
 };

@@ -3,10 +3,10 @@ import Layout from '../../../Layout';
 import Profile from './profile';
 import material from '../../../native-base-theme/variables/material';
 
-const ProfileScreen = () => {
+const ProfileScreen = (props) => {
   return (
-    <Layout>
-      <Profile></Profile>
+    <Layout {...props}>
+      <Profile {...props}></Profile>
     </Layout>
   );
 };
