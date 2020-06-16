@@ -15,10 +15,6 @@ EventsScreen.options = {
   topBar: {
     title: {
       text: 'Event',
-      color: 'white',
-    },
-    background: {
-      color: material.brandPrimary,
     },
   },
 };

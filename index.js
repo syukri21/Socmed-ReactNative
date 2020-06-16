@@ -21,18 +21,23 @@ Navigation.registerComponent('ProfileScreen', () => ProfileScreen);
 Navigation.registerComponent('EventScreen', () => EventScreen);
 
 Navigation.events().registerAppLaunchedListener(async () => {
-  const ProfileIcon = await Icon.getImageSource(
-    'user',
-    18,
-    material.brandPrimary,
-  );
-  const HomeIcon = await Icon.getImageSource('home', 18, material.brandPrimary);
-  const MenuIcon = await Icon.getImageSource('th', 18, material.brandPrimary);
-  const EventIcon = await Icon.getImageSource(
-    'calendar',
-    18,
-    material.brandPrimary,
-  );
+  const Icons = [
+    Icon.getImageSource('user', 18, material.brandPrimary),
+    Icon.getImageSource('home', 18, material.brandPrimary),
+    Icon.getImageSource('th', 18, material.brandPrimary),
+    Icon.getImageSource('calendar', 18, material.brandPrimary),
+    Icon.getImageSource('heart', 18, material.brandPrimary),
+    Icon.getImageSource('search', 18, material.brandPrimary),
+  ];
+
+  const [
+    ProfileIcon,
+    HomeIcon,
+    MenuIcon,
+    EventIcon,
+    HeartIcon,
+    SearchIcon,
+  ] = await Promise.all(Icons);
   // const UserIcon = await Icon.getImageSource('user', 18, material.brandPrimary);
 
   Navigation.setDefaultOptions({
@@ -40,6 +45,24 @@ Navigation.events().registerAppLaunchedListener(async () => {
       backgroundColor: 'white',
       hideShadow: false,
       animate: false,
+    },
+    topBar: {
+      leftButtons: [
+        {
+          icon: HomeIcon,
+        },
+      ],
+      rightButtons: [
+        {
+          icon: SearchIcon,
+        },
+        {
+          icon: HeartIcon,
+        },
+      ],
+      title: {
+        color: material.brandPrimary,
+      },
     },
     bottomTab: {
       textColor: 'white',

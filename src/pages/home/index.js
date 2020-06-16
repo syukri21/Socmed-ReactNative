@@ -15,10 +15,6 @@ HomeScreen.options = {
   topBar: {
     title: {
       text: 'Home',
-      color: 'white',
-    },
-    background: {
-      color: material.brandPrimary,
     },
   },
 };

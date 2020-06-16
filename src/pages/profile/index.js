@@ -15,10 +15,6 @@ ProfileScreen.options = {
   topBar: {
     title: {
       text: 'Profile',
-      color: 'white',
-    },
-    background: {
-      color: material.brandPrimary,
     },
   },
 };

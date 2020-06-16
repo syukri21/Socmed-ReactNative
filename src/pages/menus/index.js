@@ -15,10 +15,6 @@ MenusScreen.options = {
   topBar: {
     title: {
       text: 'Menu',
-      color: 'white',
-    },
-    background: {
-      color: material.brandPrimary,
     },
   },
 };
