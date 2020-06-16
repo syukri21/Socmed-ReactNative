@@ -1,7 +1,7 @@
 /**
  * @format
  */
-
+import React from 'react';
 import { YellowBox } from 'react-native';
 import { Navigation } from 'react-native-navigation';
 import HomeScreen from './src/pages/home/index';
@@ -9,12 +9,12 @@ import MenuScreen from './src/pages/menus/index';
 import ProfileScreen from './src/pages/profile/index';
 import EventScreen from './src/pages/events/index';
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import { Icon as IconComponent } from 'native-base';
 import material from './native-base-theme/variables/material';
 
 YellowBox.ignoreWarnings([
   'VirtualizedLists should never be nested', // TODO: Remove when fixed
 ]);
-
 Navigation.registerComponent('HomeScreen', () => HomeScreen);
 Navigation.registerComponent('MenuScreen', () => MenuScreen);
 Navigation.registerComponent('ProfileScreen', () => ProfileScreen);
@@ -28,6 +28,7 @@ Navigation.events().registerAppLaunchedListener(async () => {
     Icon.getImageSource('calendar', 18, material.brandPrimary),
     Icon.getImageSource('heart', 18, material.brandPrimary),
     Icon.getImageSource('search', 18, material.brandPrimary),
+    Icon.getImageSource('bars', 18, material.brandPrimary),
   ];
 
   const [
@@ -37,6 +38,7 @@ Navigation.events().registerAppLaunchedListener(async () => {
     EventIcon,
     HeartIcon,
     SearchIcon,
+    BarsIcon,
   ] = await Promise.all(Icons);
   // const UserIcon = await Icon.getImageSource('user', 18, material.brandPrimary);
 
@@ -47,17 +49,9 @@ Navigation.events().registerAppLaunchedListener(async () => {
       animate: false,
     },
     topBar: {
-      leftButtons: [
-        {
-          icon: HomeIcon,
-        },
-      ],
       rightButtons: [
         {
-          icon: SearchIcon,
-        },
-        {
-          icon: HeartIcon,
+          icon: BarsIcon,
         },
       ],
       title: {
