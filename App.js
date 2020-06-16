@@ -7,6 +7,7 @@ import {
   FooterTab,
   Button,
   Text,
+  Icon,
 } from 'native-base';
 import { StyleSheet } from 'react-native';
 import Home from './src/pages/home/index';
@@ -27,19 +28,19 @@ const App = () => {
       <Footer>
         <FooterTab>
           <Button>
-            <Text style={styles.navText}>Beranda</Text>
+            <Icon name="home" type="Entypo"></Icon>
           </Button>
           <Button>
-            <Text style={styles.navText}>Acara & Agenda</Text>
+            <Icon name="calendar" type="Entypo"></Icon>
           </Button>
           <Button active>
-            <Text style={styles.navText}>Pusataka Digital</Text>
+            <Icon name="bookmarks" type="Entypo"></Icon>
           </Button>
           <Button>
-            <Text style={styles.navText}>Kotak Pesan</Text>
+            <Icon name="message" type="Entypo"></Icon>
           </Button>
           <Button>
-            <Text style={styles.navText}>Profil</Text>
+            <Icon name="user" type="Entypo"></Icon>
           </Button>
         </FooterTab>
       </Footer>
