@@ -15,11 +15,6 @@ const ProfileScreen = (props) => {
 
 ProfileScreen.options = {
   topBar: {
-    leftButtons: [
-      {
-        icon: require('../../assets/svg/user.png'),
-      },
-    ],
     title: {
       text: 'Profile',
     },
