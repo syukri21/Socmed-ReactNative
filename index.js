@@ -9,8 +9,9 @@ import MenuScreen from './src/pages/menus/index';
 import ProfileScreen from './src/pages/profile/index';
 import EventScreen from './src/pages/events/index';
 import Icon from 'react-native-vector-icons/FontAwesome5';
-import { Icon as IconComponent } from 'native-base';
 import material from './native-base-theme/variables/material';
+import bottomTabsConfig, { bottomTabDefault } from './bottom-tabs.config';
+import Home from './src/pages/home/home';
 
 YellowBox.ignoreWarnings([
   'VirtualizedLists should never be nested', // TODO: Remove when fixed
@@ -58,119 +59,12 @@ Navigation.events().registerAppLaunchedListener(async () => {
         color: material.brandPrimary,
       },
     },
-    bottomTab: {
-      textColor: 'white',
-      iconColor: material.brandDark,
-      selectedTextColor: material.brandPrimary,
-      selectedIconColor: material.brandPrimary,
-    },
+    ...bottomTabDefault,
   });
 
   Navigation.setRoot({
     root: {
-      bottomTabs: {
-        id: 'BOTTOM_TABS_LAYOUT',
-        options: {
-          animations: {
-            push: {
-              content: {
-                translationX: {
-                  from: require('react-native').Dimensions.get('window').width,
-                  to: 0,
-                  duration: 300,
-                },
-              },
-            },
-            pop: {
-              content: {
-                translationX: {
-                  from: 0,
-                  to: -require('react-native').Dimensions.get('window').width,
-                  duration: 300,
-                },
-              },
-            },
-          },
-        },
-        children: [
-          {
-            stack: {
-              id: 'HOME_TAB',
-              children: [
-                {
-                  component: {
-                    id: 'HomeScreen',
-                    name: 'HomeScreen',
-                  },
-                },
-              ],
-              options: {
-                bottomTab: {
-                  icon: HomeIcon,
-                  text: 'Home',
-                },
-              },
-            },
-          },
-          {
-            stack: {
-              id: 'EVENT_TAB',
-              children: [
-                {
-                  component: {
-                    id: 'EventScreen',
-                    name: 'EventScreen',
-                  },
-                },
-              ],
-              options: {
-                bottomTab: {
-                  icon: EventIcon,
-                  text: 'Event',
-                },
-              },
-            },
-          },
-          {
-            stack: {
-              id: 'MENU_TAB',
-              children: [
-                {
-                  component: {
-                    id: 'MenuScreen',
-                    name: 'MenuScreen',
-                  },
-                },
-              ],
-              options: {
-                bottomTab: {
-                  text: 'Library',
-                  icon: MenuIcon,
-                },
-              },
-            },
-          },
-          {
-            stack: {
-              id: 'PROFILE_TAB',
-              children: [
-                {
-                  component: {
-                    id: 'ProfileScreen',
-                    name: 'ProfileScreen',
-                  },
-                },
-              ],
-              options: {
-                bottomTab: {
-                  text: 'Profile',
-                  icon: ProfileIcon,
-                },
-              },
-            },
-          },
-        ],
-      },
+      ...bottomTabsConfig({ ProfileIcon, HomeIcon, MenuIcon, EventIcon }),
       stack: {
         children: [
           {
