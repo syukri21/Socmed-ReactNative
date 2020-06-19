@@ -18,9 +18,9 @@ HomeScreen.options = {
     },
     rightButtons: [
       {
-        id: 'LeftButton',
+        id: 'RightButton',
         component: {
-          name: 'LeftButton',
+          name: 'RightButton',
         },
       },
     ],

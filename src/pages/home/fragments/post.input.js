@@ -1,102 +1,47 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  CardItem,
-  Card,
-  Body,
-  Button,
-  Input,
-  Item,
-  Icon,
-} from 'native-base';
+import { CardItem, Card, Body, Input, Item } from 'native-base';
 import { Col, Row, Grid } from 'react-native-easy-grid';
 import TextAvatar from 'react-native-text-avatar';
+import { StyleSheet } from 'react-native';
+import material from '../../../../native-base-theme/variables/material';
+
+const styles = StyleSheet.create({
+  card: {
+    borderRadius: 10,
+    elevation: 1,
+    shadowRadius: 0.1,
+    padding: 2,
+  },
+  input: {
+    width: '100%',
+    paddingHorizontal: 10,
+  },
+});
 
 const PostInput = () => {
   return (
-    <Card
-      style={{
-        paddingVertical: 5,
-        borderRadius: 10,
-        elevation: 1,
-        shadowRadius: 0.1,
-      }}>
+    <Card style={styles.card}>
       <CardItem>
         <Body>
           <Grid>
-            <Col
-              style={{
-                width: 55,
-              }}>
+            <Col style={{ width: 50 }}>
               <TextAvatar
                 backgroundColor={'#253A8D'}
                 textColor={'#fff'}
-                size={40}
+                size={50}
                 type={'circle'} // optional
               >
                 John Doe
               </TextAvatar>
             </Col>
-            <Col>
+            <Col style={{ marginLeft: material.cardItemPadding }}>
               <Grid>
-                <Row
-                  style={{
-                    marginBottom: 12,
-                  }}>
-                  <Item
-                    rounded
-                    style={{
-                      width: '100%',
-                      paddingHorizontal: 10,
-                    }}>
+                <Row>
+                  <Item rounded style={styles.input}>
                     <Input
                       placeholder="Diskusi hari ini?"
                       placeholderTextColor="#BBC0C4"></Input>
                   </Item>
-                </Row>
-                <Row>
-                  <View
-                    style={{
-                      flexDirection: 'row',
-                      alignItems: 'center',
-                      justifyContent: 'space-between',
-                      width: '100%',
-                    }}>
-                    <View
-                      style={{
-                        flexDirection: 'row',
-                      }}>
-                      <Button
-                        small
-                        transparent
-                        rounded
-                        bordered
-                        style={{
-                          marginRight: 10,
-                        }}>
-                        <Icon name="video" type="Entypo" small />
-                      </Button>
-                      <Button small transparent bordered rounded>
-                        <Icon name="image" type="Entypo" />
-                      </Button>
-                    </View>
-                    <View>
-                      <Button
-                        small
-                        style={{
-                          justifyContent: 'center',
-                        }}>
-                        <Text
-                          uppercase={false}
-                          style={{
-                            textAlign: 'center',
-                          }}>
-                          Post
-                        </Text>
-                      </Button>
-                    </View>
-                  </View>
                 </Row>
               </Grid>
             </Col>
