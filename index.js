@@ -33,7 +33,7 @@ Navigation.events().registerAppLaunchedListener(async () => {
     Icon.getImageSource('user', 18, material.brandPrimary),
     Icon.getImageSource('home', 18, material.brandPrimary),
     Icon.getImageSource('th', 18, material.brandPrimary),
-    Icon.getImageSource('calendar', 18, material.brandPrimary),
+    Icon.getImageSource('calendar-alt', 18, material.brandPrimary),
     Icon.getImageSource('heart', 18, material.brandPrimary),
     Icon.getImageSource('search', 18, material.brandPrimary),
     Icon.getImageSource('bars', 18, material.brandPrimary),
