@@ -1,34 +1,58 @@
 import React from 'react';
-import {
-  View,
-  Container,
-  Card,
-  CardItem,
-  Text,
-  Body,
-  Button,
-  Icon,
-} from 'native-base';
+import { View, Card, CardItem, Text, Body, Icon, Right } from 'native-base';
 import TextAvatar from 'react-native-text-avatar';
-import { TouchableHighlight, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 import material from '../../../../native-base-theme/variables/material';
+import Ripple from 'react-native-material-ripple';
 
 const styles = StyleSheet.create({
-  name: {
+  nameWrapper: {
     marginLeft: 1.5 * material.cardItemPadding,
+  },
+  name: {
     fontSize: 12,
+  },
+  date: {
+    fontSize: 10,
+    color: material.textGray,
   },
   iconButton: {
     color: material.brandPrimary,
-    marginLeft: 10,
-    fontSize: 20,
+    fontSize: 16,
   },
   card: {
-    borderRadius: 8,
-    paddingVertical: 5,
-    elevation: 8,
+    borderRadius: 4,
+
+    elevation: 4,
+
     borderWidth: 0,
     borderColor: 'transparent',
+  },
+  ripple: {
+    marginLeft: 10,
+    padding: 5,
+    flexDirection: 'row',
+    fontSize: 12,
+  },
+
+  rippleText: {
+    color: material.textGray,
+    marginLeft: 5,
+    fontSize: 12,
+  },
+  readMore: { color: material.textGray, fontSize: 12, marginTop: 10 },
+  bodyCarditem: {
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    borderBottomWidth: 1,
+    borderBottomColor: material.inputBorderColor,
+  },
+  footerCardItem: {
+    justifyContent: 'flex-end',
+    paddingLeft: material.cardItemPadding,
+    paddingRight: material.cardItemPadding,
+    paddingTop: 5,
+    paddingBottom: 5,
   },
 });
 
@@ -44,59 +68,43 @@ const Post = () => {
         >
           ALI MASNGUT
         </TextAvatar>
-        <Text style={styles.name}>Drs. ALI MASNGUT, SH, M.Ag</Text>
+        <View style={styles.nameWrapper}>
+          <Text style={styles.name}>Drs. ALI MASNGUT, SH, M.Ag</Text>
+          <Text style={styles.date}>31 menit yang lalu</Text>
+        </View>
       </CardItem>
-      <CardItem style={{ flexDirection: 'column', alignItems: 'flex-start' }}>
+      <CardItem style={styles.bodyCarditem}>
         <Body>
-          <Text style={{ fontSize: 14, color: '#364149' }}>
-            Pribadi yang selalu semangat, sabar, ikhlas, tawakal, selalu
-            bersyukur
+          <Text
+            style={{ fontSize: 14, color: '#364149', textAlign: 'justify' }}>
+            Id cupidatat officia magna Lorem deserunt quis voluptate pariatur
+            officia ex aliqua reprehenderit. Aliqua ut ipsum sint est amet est
+            magna amet labore anim aliqua ea.
           </Text>
         </Body>
-        <Text style={{ color: '#8DADB9', fontSize: 12, marginTop: 4 }}>
-          Read More
-        </Text>
+        <Text style={styles.readMore}>Read More</Text>
       </CardItem>
-      <CardItem style={{ flexDirection: 'column' }}>
+      <CardItem style={styles.footerCardItem}>
         <View
           style={{
-            justifyContent: 'space-between',
-            width: '100%',
+            justifyContent: 'center',
             flexDirection: 'row',
             alignItems: 'center',
           }}>
-          <Text style={{ fontWeight: '700', fontSize: 12 }}>1 Suka</Text>
-          <View
-            style={{
-              justifyContent: 'center',
-              flexDirection: 'row',
-              alignItems: 'center',
-            }}>
-            <TouchableHighlight activeOpacity>
-              <Icon
-                type="Entypo"
-                style={styles.iconButton}
-                name="heart-outlined"></Icon>
-            </TouchableHighlight>
-            <TouchableHighlight>
-              <Icon
-                type="Entypo"
-                style={styles.iconButton}
-                name="message"></Icon>
-            </TouchableHighlight>
-          </View>
-        </View>
-        <View
-          style={{
-            justifyContent: 'space-between',
-            width: '100%',
-            flexDirection: 'row',
-            alignItems: 'center',
-          }}>
-          <Text style={{ fontSize: 10, color: '#8DADB9' }}>Lihat Komentar</Text>
-          <Text style={{ fontSize: 10, color: '#8DADB9' }}>
-            31 menit yang lalu
-          </Text>
+          <Ripple style={styles.ripple} rippleColor={material.brandPrimary}>
+            <Icon
+              type="FontAwesome5"
+              style={styles.iconButton}
+              name="heart"></Icon>
+            <Text style={styles.rippleText}>255</Text>
+          </Ripple>
+          <Ripple style={styles.ripple} rippleColor={material.brandPrimary}>
+            <Icon
+              type="FontAwesome5"
+              style={styles.iconButton}
+              name="comments"></Icon>
+            <Text style={styles.rippleText}>255</Text>
+          </Ripple>
         </View>
       </CardItem>
     </Card>

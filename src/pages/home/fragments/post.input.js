@@ -7,7 +7,7 @@ import material from '../../../../native-base-theme/variables/material';
 
 const styles = StyleSheet.create({
   card: {
-    borderRadius: 8,
+    borderRadius: 4,
     padding: 2,
     elevation: 8,
     borderWidth: 0,
@@ -39,9 +39,7 @@ const PostInput = () => {
               <Grid>
                 <Row>
                   <Item rounded style={styles.input}>
-                    <Input
-                      placeholder="Diskusi hari ini?"
-                      placeholderTextColor="#BBC0C4"></Input>
+                    <Input placeholder="Diskusi hari ini?"></Input>
                   </Item>
                 </Row>
               </Grid>

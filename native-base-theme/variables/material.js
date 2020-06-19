@@ -22,6 +22,8 @@ export default {
   platformStyle,
   platform,
 
+  textGray: '#ACACAC',
+
   // Accordion
   headerStyle: '#edebed',
   iconStyle: '#000',
@@ -257,7 +259,7 @@ export default {
   topTabBarActiveBorderColor: '#fff',
 
   // Tabs
-  tabBgColor: '#1B6CA8',
+  tabBgColor: primary,
   tabFontSize: 15,
 
   // Text
