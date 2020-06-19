@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
   headerCardItem: {
     paddingLeft: material.cardItemPadding,
     paddingRight: material.cardItemPadding,
-    paddingTop: 5,
+    paddingTop: material.cardItemPadding,
     paddingBottom: 5,
   },
   center: {
