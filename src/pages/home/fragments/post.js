@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Card, CardItem, Text, Body, Icon, Right } from 'native-base';
 import TextAvatar from 'react-native-text-avatar';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Image } from 'react-native';
 import material from '../../../../native-base-theme/variables/material';
 import Ripple from 'react-native-material-ripple';
 
@@ -22,9 +22,7 @@ const styles = StyleSheet.create({
   },
   card: {
     borderRadius: 4,
-
     elevation: 4,
-
     borderWidth: 0,
     borderColor: 'transparent',
   },
@@ -40,7 +38,7 @@ const styles = StyleSheet.create({
     marginLeft: 5,
     fontSize: 12,
   },
-  readMore: { color: material.textGray, fontSize: 12, marginTop: 10 },
+  readMore: { color: material.textGray, fontSize: 12, marginTop: 5 },
   bodyCarditem: {
     flexDirection: 'column',
     alignItems: 'flex-start',
@@ -54,12 +52,25 @@ const styles = StyleSheet.create({
     paddingTop: 5,
     paddingBottom: 5,
   },
+  headerCardItem: {
+    paddingLeft: material.cardItemPadding,
+    paddingRight: material.cardItemPadding,
+    paddingTop: 5,
+    paddingBottom: 5,
+  },
+  center: {
+    justifyContent: 'center',
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  bodyText: { fontSize: 14, color: material.textColor, textAlign: 'justify' },
+  image: { width: '100%', height: 300, resizeMode: 'cover' },
 });
 
-const Post = () => {
+const Post = (props) => {
   return (
     <Card style={styles.card}>
-      <CardItem>
+      <CardItem style={styles.headerCardItem}>
         <TextAvatar
           backgroundColor={'#253A8D'}
           textColor={'#fff'}
@@ -69,28 +80,21 @@ const Post = () => {
           ALI MASNGUT
         </TextAvatar>
         <View style={styles.nameWrapper}>
-          <Text style={styles.name}>Drs. ALI MASNGUT, SH, M.Ag</Text>
-          <Text style={styles.date}>31 menit yang lalu</Text>
+          <Text style={styles.name}>{props.name}</Text>
+          <Text style={styles.date}>{props.time}</Text>
         </View>
       </CardItem>
       <CardItem style={styles.bodyCarditem}>
         <Body>
-          <Text
-            style={{ fontSize: 14, color: '#364149', textAlign: 'justify' }}>
-            Id cupidatat officia magna Lorem deserunt quis voluptate pariatur
-            officia ex aliqua reprehenderit. Aliqua ut ipsum sint est amet est
-            magna amet labore anim aliqua ea.
-          </Text>
+          <Text style={styles.bodyText}>{props.text}</Text>
         </Body>
         <Text style={styles.readMore}>Read More</Text>
       </CardItem>
+      {props.image && (
+        <Image source={{ uri: props.image }} style={styles.image}></Image>
+      )}
       <CardItem style={styles.footerCardItem}>
-        <View
-          style={{
-            justifyContent: 'center',
-            flexDirection: 'row',
-            alignItems: 'center',
-          }}>
+        <View style={styles.center}>
           <Ripple style={styles.ripple} rippleColor={material.brandPrimary}>
             <Icon
               type="FontAwesome5"
