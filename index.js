@@ -15,16 +15,20 @@ import bottomTabsConfig, {
 import topBarConfig from './src/navigations/top-bar.config';
 import RightButtonHome from './src/components/navigations/right-button.home';
 import RightButtonProfile from './src/components/navigations/right-button.profile';
+import LoginScreen from './src/pages/login/index';
 
 YellowBox.ignoreWarnings([
   'VirtualizedLists should never be nested', // TODO: Remove when fixed
 ]);
 
+// Screen
 Navigation.registerComponent('HomeScreen', () => HomeScreen);
 Navigation.registerComponent('MenuScreen', () => MenuScreen);
 Navigation.registerComponent('ProfileScreen', () => ProfileScreen);
 Navigation.registerComponent('EventScreen', () => EventScreen);
+Navigation.registerComponent('LoginScreen', () => LoginScreen);
 
+// Component
 Navigation.registerComponent('RightButtonHome', () => RightButtonHome);
 Navigation.registerComponent('RightButtonProfile', () => RightButtonProfile);
 
@@ -55,40 +59,26 @@ Navigation.events().registerAppLaunchedListener(async () => {
     ...bottomTabDefault,
   });
 
-  Navigation.setRoot({
-    root: {
-      bottomTabs: bottomTabsConfig({
-        ProfileIcon,
-        HomeIcon,
-        MenuIcon,
-        EventIcon,
-      }),
-      stack: {
-        children: [
-          {
-            component: {
-              name: 'HomeScreen',
-            },
-          },
-          {
-            component: {
-              name: 'MenuScreen',
-            },
-          },
-          {
-            component: {
-              name: 'ProfileScreen',
-            },
-          },
-          {
-            component: {
-              name: 'EventScreen',
-            },
-          },
-        ],
-      },
+  const mainRoot = {
+    bottomTabs: bottomTabsConfig({
+      ProfileIcon,
+      HomeIcon,
+      MenuIcon,
+      EventIcon,
+    }),
+    stack: {
+      children: [
+        { component: { name: 'HomeScreen' } },
+        { component: { name: 'MenuScreen' } },
+        { component: { name: 'ProfileScreen' } },
+        { component: { name: 'EventScreen' } },
+        { component: { name: 'LoginScreen' } },
+      ],
     },
-  });
+  };
+  const loginRoot = { root: { component: { name: 'LoginScreen' } } };
+
+  Navigation.setRoot(true ? loginRoot : mainRoot);
 });
 
 // AppRegistry.registerComponent(appName, () => App);
