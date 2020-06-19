@@ -13,7 +13,8 @@ import bottomTabsConfig, {
   bottomTabDefault,
 } from './src/navigations/bottom-tabs.config';
 import topBarConfig from './src/navigations/top-bar.config';
-import RightButton from './src/components/navigations/right-button';
+import RightButtonHome from './src/components/navigations/right-button.home';
+import RightButtonProfile from './src/components/navigations/right-button.profile';
 
 YellowBox.ignoreWarnings([
   'VirtualizedLists should never be nested', // TODO: Remove when fixed
@@ -23,7 +24,9 @@ Navigation.registerComponent('HomeScreen', () => HomeScreen);
 Navigation.registerComponent('MenuScreen', () => MenuScreen);
 Navigation.registerComponent('ProfileScreen', () => ProfileScreen);
 Navigation.registerComponent('EventScreen', () => EventScreen);
-Navigation.registerComponent('RightButton', () => RightButton);
+
+Navigation.registerComponent('RightButtonHome', () => RightButtonHome);
+Navigation.registerComponent('RightButtonProfile', () => RightButtonProfile);
 
 Navigation.events().registerAppLaunchedListener(async () => {
   const Icons = [

@@ -16,8 +16,16 @@ const ProfileScreen = (props) => {
 ProfileScreen.options = {
   topBar: {
     title: {
-      text: 'Profile',
+      text: 'Drs Ali Mangsut, SH .Mag',
     },
+    rightButtons: [
+      {
+        id: 'RightButtonProfile',
+        component: {
+          name: 'RightButtonProfile',
+        },
+      },
+    ],
   },
 };
 

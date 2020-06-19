@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const RightButton = (props) => {
+const RightButtonProfile = (props) => {
   return (
     <View style={styles.container}>
       <Ripple style={styles.ripple} rippleColor={material.brandPrimary}>
@@ -41,6 +41,6 @@ const RightButton = (props) => {
   );
 };
 
-RightButton.option = {};
+RightButtonProfile.option = {};
 
-export default RightButton;
+export default RightButtonProfile;
