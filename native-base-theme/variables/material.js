@@ -25,7 +25,7 @@ export default {
   // Accordion
   headerStyle: '#edebed',
   iconStyle: '#000',
-  contentStyle: '#f5f4f5',
+  contentStyle: '#FAFAFA',
   expandedIconStyle: '#000',
   accordionBorderColor: '#d3d3d3',
 

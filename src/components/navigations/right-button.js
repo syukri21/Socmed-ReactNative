@@ -20,6 +20,7 @@ const styles = StyleSheet.create({
   },
   spacer: {
     width: 10,
+    backgroundColor: 'transparent',
   },
 });
 

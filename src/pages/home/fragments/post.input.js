@@ -7,10 +7,11 @@ import material from '../../../../native-base-theme/variables/material';
 
 const styles = StyleSheet.create({
   card: {
-    borderRadius: 10,
-    elevation: 1,
-    shadowRadius: 0.1,
+    borderRadius: 8,
     padding: 2,
+    elevation: 8,
+    borderWidth: 0,
+    borderColor: 'transparent',
   },
   input: {
     width: '100%',
