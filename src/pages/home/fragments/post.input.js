@@ -13,10 +13,12 @@ const styles = StyleSheet.create({
     borderWidth: 0,
     borderColor: 'transparent',
   },
-  input: {
+  inputContainer: {
     width: '100%',
     paddingHorizontal: 10,
-    fontSize: 14,
+  },
+  input: {
+    fontSize: 16,
   },
 });
 
@@ -39,8 +41,10 @@ const PostInput = () => {
             <Col style={{ marginLeft: material.cardItemPadding }}>
               <Grid>
                 <Row>
-                  <Item rounded style={styles.input}>
-                    <Input placeholder="Diskusi hari ini?"></Input>
+                  <Item rounded style={styles.inputContainer}>
+                    <Input
+                      placeholder="Diskusi hari ini?"
+                      style={styles.input}></Input>
                   </Item>
                 </Row>
               </Grid>
