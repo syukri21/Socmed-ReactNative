@@ -28,10 +28,7 @@ const RightButtonProfile = (props) => {
   return (
     <View style={styles.container}>
       <Ripple style={styles.ripple} rippleColor={material.brandPrimary}>
-        <Icon
-          name="ellipsis-vertical"
-          type="FontAwesome5"
-          style={styles.icon}></Icon>
+        <Icon name="ellipsis-v" type="FontAwesome5" style={styles.icon}></Icon>
       </Ripple>
     </View>
   );
